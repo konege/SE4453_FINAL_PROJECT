@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Start the SSH service
+# SSH sunucusunu başlatıyoruz
 service ssh start
 
-# Run the Flask application
+# Flask uygulamasını başlatıyoruz
 python app.py
