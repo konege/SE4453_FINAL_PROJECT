@@ -39,7 +39,7 @@ def hello():
     cursor.execute('SELECT 1')
     result = cursor.fetchone()
     conn.close()
-    return "Hello, World! DB Connection Successful by Konege" if result else "DB Connection Failed"
+    return "Hello, World! DB Connection Successful by Konege(20070006024)" if result else "DB Connection Failed"
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=8080)
