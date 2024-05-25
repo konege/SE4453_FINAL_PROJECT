@@ -46,7 +46,7 @@ def hello():
         cursor.execute('SELECT 1')
         result = cursor.fetchone()
         conn.close()
-        return "Hello, World! DB Connection Successful by Konege" if result else "DB Connection Failed"
+        return "Hello, World! DB Connection Successful by Konege(20070006024)" if result else "DB Connection Failed"
     except Exception as e:
         return f"DB Connection Failed: {e}"
 
