@@ -7,9 +7,9 @@ from azure.identity import DefaultAzureCredential
 app = Flask(__name__)
 
 # Ensure the environment variable for Key Vault name is set
-keyVaultName = os.environ.get("KEYVAULTNAME")
+keyVaultName = os.environ.get("KEY_VAULT_NAME")
 if not keyVaultName:
-    raise Exception("KEYVAULTNAME environment variable not set")
+    raise Exception("KEY_VAULT_NAME environment variable not set")
 
 KVUri = f"https://{keyVaultName}.vault.azure.net"
 
