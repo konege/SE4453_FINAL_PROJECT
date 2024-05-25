@@ -9,7 +9,7 @@ app = Flask(__name__)
 # Ensure the environment variable for Key Vault name is set
 keyVaultName = os.environ.get("KEY_VAULT_NAME")
 if not keyVaultName:
-    raise Exception("KEY_VAULT_NAME environment variable not set")
+    raise Exception("KEYVAULTNAME environment variable not set")
 
 KVUri = f"https://{keyVaultName}.vault.azure.net"
 
@@ -23,6 +23,7 @@ try:
     db_user = client.get_secret("DBUSER").value
     db_password = client.get_secret("DBPASSWORD").value
     db_host = client.get_secret("DBHOST").value
+    db_port = client.get_secret("DBPORT").value
 except Exception as e:
     raise Exception(f"Failed to retrieve secrets from Key Vault: {e}")
 
@@ -32,7 +33,8 @@ def get_db_connection():
             dbname=db_name,
             user=db_user,
             password=db_password,
-            host=db_host
+            host=db_host,
+            port=db_port
         )
         return conn
     except Exception as e:
