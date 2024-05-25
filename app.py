@@ -7,7 +7,7 @@ from azure.identity import DefaultAzureCredential
 app = Flask(__name__)
 
 # Ensure the environment variable for Key Vault name is set
-keyVaultName = os.environ.get("KEY_VAULT_NAME")
+keyVaultName = os.environ.get("KEYVAULTNAME")
 if not keyVaultName:
     raise Exception("KEYVAULTNAME environment variable not set")
 
@@ -46,7 +46,7 @@ def hello():
         cursor.execute('SELECT 1')
         result = cursor.fetchone()
         conn.close()
-        return "Hello, World! DB Connection Successful by Ege Demir (20070006024)" if result else "DB Connection Failed"
+        return "Hello, World! DB Connection Successful by Konege" if result else "DB Connection Failed"
     except Exception as e:
         return f"DB Connection Failed: {e}"
 
