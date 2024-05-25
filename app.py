@@ -11,7 +11,7 @@ app = Flask(__name__)
 logging.basicConfig(level=logging.INFO)
 
 # Ensure the environment variable for Key Vault name is set
-keyVaultName = os.environ.get("KEYVAULTNAME")
+keyVaultName = os.environ.get("KEY_VAULT_NAME")
 if not keyVaultName:
     logging.error("KEYVAULTNAME environment variable not set")
     raise Exception("KEYVAULTNAME environment variable not set")
