@@ -18,10 +18,10 @@ credential = DefaultAzureCredential()
 client = SecretClient(vault_url=KVUri, credential=credential)
 
 # Fetch the database credentials from Azure Key Vault
-db_name = client.get_secret("DB_NAME").value
-db_user = client.get_secret("DB_USER").value
-db_password = client.get_secret("DB_PASSWORD").value
-db_host = client.get_secret("DB_HOST").value
+db_name = client.get_secret("DBNAME").value
+db_user = client.get_secret("DBUSER").value
+db_password = client.get_secret("DBPASSWORD").value
+db_host = client.get_secret("DBHOST").value
 
 def get_db_connection():
     conn = psycopg2.connect(
